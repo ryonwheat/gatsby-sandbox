@@ -18,6 +18,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background-color: #fff;
+
 }
 article,
 aside,
@@ -594,4 +596,32 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+/** CUSTOM */
+header {
+    background-color: rgb(51, 104, 153);
+    margin-bottom: 1.45rem;
+}
+
+header > div {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1.45rem 1.0875rem;
+}
+
+header > div > h1 { 
+    margin: 0;
+}
+
+header > div > h1 > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon {
+    border: 1px solid #000;
+    background-color: #dfdfdf;
+    width: 10px;
 }
