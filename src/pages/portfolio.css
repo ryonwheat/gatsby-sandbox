@@ -1,0 +1,69 @@
+/** PORTFOLIO */
+.container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  /* background-color: #999; */
+  margin: 0;
+  padding: 2% 2% 0 2%;
+}
+
+.card1 {
+  position: relative;
+  flex: 0 0 32%;
+  /* padding: 0 15px; */
+  /* padding-bottom: 100px;  */
+  /* same as flex width, sets height */
+  margin-bottom: 2%;
+  background-color: #fff;
+  font-size: .85em;
+  border-radius: 3px;
+  box-shadow: 0 6px 8px rgba(85, 102, 119, 0.03),
+    0 1px 1px rgba(85, 102, 119, 0.4);
+  transition: box-shadow 0.2s ease 0s;
+  height: 200px;
+  /* width: auto; */
+  /* margin: 20px 10px; */
+}
+
+.card1:hover {
+  box-shadow: 0 6px 8px rgba(85, 102, 119, 0.03),
+    0 1px 4px rgba(85, 102, 119, 0.4);
+  /* background-color: #e1e3e5; */
+}
+
+.card1-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  height: 78%;
+  /* background-color: #ddd; */
+  /* padding-bottom: 150px; */
+}
+
+.card1-footer {
+  position: relative;
+  /* height: 20%; */
+  bottom: 0;
+  /* height: 40px; */
+  /* background-color: rgba(0, 0, 0, 0.034); */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
+  padding: .75em 1.25em;
+}
+
+.card2 {
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  height: 200px;
+  width: 40%;
+  margin: 40px auto;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}

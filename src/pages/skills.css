@@ -1,0 +1,13 @@
+/** SKILLS */
+/** TODO: move this up to global and reuse generic container */
+.container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    /* background-color: #999; */
+    margin: 0;
+    padding: 2% 2% 0 2%;
+  }
+  

@@ -1,0 +1,81 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    width: 65px;
+    height: 100vh;
+    text-align: center;
+    background-color: #363537;
+    padding: 15px 0;
+    z-index: 10;
+}
+
+.sidebar a {
+    color: #fff;
+    font-size: .7em;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+}
+
+.hamburgerIcon, .toggle-icon {
+    color: #fff;
+}
+
+.socialIcons {
+    position: absolute;
+    bottom: 0;
+    border: 0px solid orange;
+    width: 100%;
+}
+
+.nav-sidebar {
+    border: 0px solid green;
+    margin: 0;
+    padding: 0;
+    top: 25vh;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-sidebar > ul, .socialIcons > ul {
+    border: 0px solid pink;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-sidebar > ul > li {
+    border: 0px solid pink;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+.socialIcons > ul > li {
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.nav-sidebar > ul > li:hover {
+    text-decoration: underline;
+}
+
+.socialIcons a {
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: none;
+    display: inline-block;
+}
+
+.socialIcons a svg {
+    color: #000;
+}
+
+.socialIcons a svg:hover {
+    color: #a11069;
+}
+
+

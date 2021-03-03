@@ -1,10 +1,22 @@
+var proxy = require("http-proxy-middleware")
+
 module.exports = {
   siteMetadata: {
     title: `Ryan Heath`,
     description: ``,
     author: `@ryonwheat`,
   },
+  developMiddleware: app => {
+    app.use(
+      "/api/",
+      proxy({
+        target: "http://localhost:3000",
+      })
+    )
+  },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,7 +39,23 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-dark-mode`
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto`,
+          "Montserrat",
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

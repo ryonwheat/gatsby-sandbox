@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  /*font-family: Roboto, georgia, serif;*/
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -18,8 +18,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  background-color: #fff;
-
+  perspective: 1200px;
 }
 article,
 aside,
@@ -83,8 +82,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -262,8 +261,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -279,8 +278,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -296,8 +295,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -313,8 +312,8 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -330,8 +329,8 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -348,16 +347,17 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  margin-bottom: 1.45rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   list-style-position: outside;
   list-style-image: none;
+  list-style-type: none;
 }
 ol {
   margin-left: 1.45rem;
@@ -439,14 +439,9 @@ blockquote {
   margin-bottom: 1.45rem;
 }
 form {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0;
+  padding: 0;
+  /* margin-bottom: 1.45rem; */
 }
 noscript {
   margin-left: 0;
@@ -598,30 +593,380 @@ pre tt:after {
   }
 }
 
-
 /** CUSTOM */
-header {
-    background-color: rgb(51, 104, 153);
-    margin-bottom: 1.45rem;
+.page-container {
+  margin: 0;
 }
 
-header > div {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
+.main-content {
+  min-height: 100vh;
+  margin: 0 auto 50px auto;
+  max-width: 960px;
+  padding: 60px 1.0875rem 1.45rem 0;
 }
 
-header > div > h1 { 
-    margin: 0;
+.landing-image {
+  width: 400px;
+  height: 200px;
 }
 
-header > div > h1 > a {
+.background {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #112a11;
+  background-image: linear-gradient(
+      transparent 49px,
+      rgba(72, 228, 255, 0.9) 50px,
+      rgba(72, 228, 255, 0.9) 50px,
+      transparent 51px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 49px,
+      rgba(72, 228, 255, 0.9) 50px,
+      rgba(72, 228, 255, 0.9) 50px,
+      transparent 51px
+    ),
+    linear-gradient(
+      transparent 9px,
+      rgba(0, 255, 0, 0.2) 9px,
+      rgba(0, 255, 0, 0.2) 10px,
+      transparent 10px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 9px,
+      rgba(0, 255, 0, 0.2) 9px,
+      rgba(0, 255, 0, 0.2) 10px,
+      transparent 10px
+    );
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: center;
+
+  box-shadow: inset 0 0 30px 0 #000;
+}
+
+/* Dark mode styles */
+.dark-switcher {
+  color: #fff;
+  margin-top: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .dark-switcher {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}
+
+.dark {
+  background-color: var(--dark-background-color);
+  color: hsla(0, 0%, 100%, 0.8);
+  /* opacity: .85; */
+  transition: all 0.6s ease;
+}
+
+.light {
+  background-color: var(--light-background-color);
+  color: hsla(0, 0%, 0%, 0.8);
+  transition: all 0.6s ease;
+}
+
+/* .dark a, .dark a:visited {
+  color: #fff;
+} */
+
+.toggle-icon {
+  color: #fff;
+}
+
+.btn {
+  background-color: #fff;
+  border: 0px solid blue;
+  border-radius: 4px;
+  padding: 14px 18px;
+  font-family: Arial;
+}
+
+.gsap-btn {
+  background-color: #4a87c4;
+  color: #fff;
+  font-size: 0.7em;
+  margin: 0 4px 0 0;
+  padding: 4px 9px;
+}
+
+.carousel-item {
+  background-color: #4e4e4e;
+  height: 300px;
+}
+
+.ball {
+  border: 0px solid yellow;
+  border-radius: 100%;
+  padding: 20px;
+  width: 20px;
+  margin: 0 18px 0 0;
+}
+.ball0 {
+  background-color: blue;
+}
+.ball1 {
+  background-color: red;
+}
+.ball2 {
+  background-color: yellow;
+}
+.ball3 {
+  background-color: green;
+}
+
+.animationContainer {
+  margin: 35px 0;
+}
+
+.box0,
+.box1,
+.box2 {
+  background-color: orange;
+  border-radius: 4px;
+  margin: 0 8px 0 0;
+  height: 50px;
+  width: 50px;
+}
+.box1 {
+  background-color: limegreen;
+}
+
+.circle {
+  background-color: rgba(100, 100, 100, 0.75);
+  border-radius: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -50px;
+  /* margin: 0 auto; */
+  width: 100px;
+  height: 100px;
+  transition: all 4s ease-in-out;
+  transform: scale(4);
+}
+.circle:hover {
+  transform: scale(0.1);
+}
+
+/* ANIMATION */
+.curtain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background-color: #fff;
+  opacity: 1;
+  z-index: 100;
+}
+
+.page-loading .curtain {
+  transform: scaleX(1);
+}
+
+.loading-bar {
+  height: 1px;
+  /*   width: 0; */
+  background-color: rgb(12, 80, 145);
+  /* background-color: skyblue; */
+  animation: loading-bar-animation 2s ease-in 1 forwards;
+}
+
+@keyframes loading-bar-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100vw;
+    height: 2px;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in-animation;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-duration: 0.5s;
+  animation-fill-mode: forward;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+.fade-out {
+  animation-name: fade-out-animation;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-duration: 2s;
+  animation-fill-mode: forward;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ul.skill-icon-list li svg {
     color: #fff;
-    text-decoration: none;
+} */
+.skill-icon-list li {
+  display: inline-block;
+  padding: 20px 20px;
+  text-align: center;
+  vertical-align: top;
+}
+.skill-icon {
+  color: #fff;
+}
+.skill-icon-dark {
+  color: #000;
+}
+.angular {
+  color: #c3032f;
+}
+.aws {
+  color: #ec912d;
+}
+.html5 {
+  color: rgb(228 78 38);
+}
+.css3 {
+  color: rgb(0 112 185);
+}
+.fedora {
+  color: #294172;
+}
+.js {
+  color: rgb(99 168 19);
+}
+.nodejs {
+  color: #43853d;
+}
+.php {
+  color: #8892bf;
+}
+.react {
+  color: #61dafb;
+}
+.salesforce {
+  color: #00a2df;
+}
+.suse {
+  color: #70b425;
+}
+.ubuntu {
+  color: #d8391f;
+}
+.windows {
+  color: #05a8e7;
+}
+.wordpress {
+  color: #00769c;
+}
+.bootstrap {
+  color: #7953b2;
 }
 
-.icon {
-    border: 1px solid #000;
-    background-color: #dfdfdf;
-    width: 10px;
+.page-header {
+    margin: 0 0 12px 0;
 }
+
+.page-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.space {
+  width: 16px;
+}
+.elastic {
+  display: inline-block;
+  color: #7953b2;
+  font-family: "Roboto";
+  font-size: 60px;
+  font-weight: 500;
+}
+.elastic-animation {
+  animation: elastic-animation 1.5s ease infinite;
+}
+@keyframes elastic-animation {
+  0% {
+    transform: scale3d(1, 1, 1);
+    /* transform: scale(1); */
+  }
+  28% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  42% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.88, 1.18, 1);
+    /* font-size: 2em; */
+  }
+  60% {
+    /* transform: scale3d(1, 1.25, 1); */
+  }
+  75% {
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    /* transform: scale(1); */
+  }
+}
+
+/**
+ * Used with CSSTransition
+ */
+/* .fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  } */

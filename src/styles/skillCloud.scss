@@ -1,0 +1,176 @@
+@use "sass:list";
+@use "sass:math";
+
+$animation-duration: 30s;
+$sphere-diameter: 400;
+$sphere-diameter-str: $sphere-diameter + px;
+$sphere-radius: $sphere-diameter / 2;
+$point-diameter: 1px;
+$point-count: 200;
+$skills-list: HTML5, CSS3, JS;
+
+.skill-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 60px;
+  perspective: 800px;
+  //   background-color: #333;
+}
+
+.inner-container {
+  //   background-color: #9e9e9e;
+  position: relative;
+  width: $sphere-diameter-str;
+  height: $sphere-diameter-str;
+  transform-style: preserve-3d;
+  animation: rotate $animation-duration linear infinite;
+}
+
+.point,
+.point-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+//   background-color: #cedeee;
+  border-radius: 50%;
+  width: $point-diameter;
+  height: $point-diameter;
+  transform-style: preserve-3d;
+  &:before {
+      content: "";
+      display: block;
+      background-color: #cedeee;
+      opacity: 1;
+      border-radius: 50%;
+      width: $point-diameter;
+      height: $point-diameter;
+      transform-style: preserve-3d;
+      animation: rotate-inverse $animation-duration linear infinite,
+        scale 3s infinite linear;
+    }
+}
+
+.point-light {
+  &:before {
+    background-color: #3e3e3e;
+  }
+}
+
+.skill-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.skill,
+.skill-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  color: #fff;
+  opacity: 0.85;
+  font-size: 0.8em;
+  //   background-color: #777;
+  transform-style: preserve-3d;
+  // transform: rotateZ(90deg);
+  animation: rotate-label 15s linear infinite;
+}
+
+.skill-light {
+  color: #333;
+}
+
+@for $i from 1 through $point-count {
+  $phi: ($i / $point-count) * math.$pi;
+  $theta: ($i / $point-count) * 90;
+  $x: $sphere-radius * math.sin($phi) * math.cos($theta);
+  $y: $sphere-radius * math.sin($phi) * math.sin($theta);
+  $z: $sphere-radius * math.cos($phi);
+
+  @debug "x: #{$x}";
+  //   @debug $y;
+  //   @debug $z;
+
+  div.point:nth-child(#{$i}) {
+    // transform: translate3d($x + px, $y + px, $z + px);
+    &:before {
+      animation-delay: -($i/$point-count) * 2 + s;
+    }
+  }
+}
+
+// @each $skill in $skills-list {
+//   $i: index($skills-list, $skill);
+//   $phi: ($i / length($skills-list)) * math.$pi;
+//   $theta: ($i / length($skills-list)) * 90;
+//   $x: $sphere-radius * math.sin($phi) * math.cos($theta);
+//   $y: $sphere-radius * math.sin($phi) * math.sin($theta);
+//   $z: $sphere-radius * math.cos($phi);
+
+//   div.skill:nth-child(#{$i}) {
+//     transform: translate3d($x + px, $y + px, $z + px);
+//     &:before {
+//         content: "#{length($skills-list)}";
+//     }
+//   }
+// }
+
+@keyframes rotate {
+  from {
+    // transform: rotateX(90deg) rotateZ(360deg);
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+    // transform: rotateX(90deg) rotateZ(-360deg);
+    // transform: rotateX(90deg) rotateY(-360deg);
+  }
+}
+
+@keyframes rotate-inverse {
+  from {
+    transform: rotateY(-360deg);
+    // transform: rotateX(90deg) rotateY(-360deg);
+  }
+  to {
+    transform: rotateY(360deg);
+    // transform: rotateX(90deg) rotateY(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(3);
+  }
+}
+
+@keyframes rotate-label {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+    // transform: scale(3);
+  }
+}
+
+@keyframes scale {
+  0%,
+  45%,
+  55%,
+  100% {
+    box-shadow: 0 0 10px 0px #fff;
+  }
+  50% {
+    box-shadow: 0 0 10px 5px #7953b2;
+  }
+}
