@@ -1,3 +1,5 @@
+const config = require("./src/config")
+
 var proxy = require("http-proxy-middleware")
 
 module.exports = {
@@ -15,9 +17,23 @@ module.exports = {
     )
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-json`,
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,8 +41,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -43,8 +64,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          `Fira Code`,
           `Roboto`,
-          "Montserrat",
+          `Montserrat`,
           `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
         display: "swap",

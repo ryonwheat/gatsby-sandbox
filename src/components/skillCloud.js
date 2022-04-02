@@ -79,6 +79,8 @@ class SkillCloud extends Component {
       el.style.transform =
         "translate3d(" + c.x + "px, " + c.y + "px, " + c.z + "px)"
       parentEl.appendChild(el)
+
+      
     }
 
     for (let i = 1; i <= skills.length; i++) {

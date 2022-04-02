@@ -9,8 +9,10 @@ import React, { Component } from "react"
 // import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+import { ThemeProvider } from "styled-components"
 import NavbarContext from "../components/navbarContext"
 import ThemeContext from "../components/themeContext"
+import theme from "../styles/theme"
 
 import Header from "../components/header"
 import Sidebar from "../components/sidebar"
@@ -67,45 +69,52 @@ class Layout extends Component {
           }
         `}
         render={data => (
-          <ThemeContext.Consumer>
-            {context => (
-              <NavbarContext.Consumer>
-                {navbar => (
-                      <TransitionHandler location = {this.props.location}>
-                      {/* //   <div id="page-container" className="page-container"> */}
-                  <div
-                    id="page-container"
-                    className={`page-container ${context.dark ? "dark" : "light"}`}
-                  >
-                    {navbar.isNavbarLeft === true && (
-                      <Sidebar
-                        siteTitle={data.site.siteMetadata?.title || `Title`}
-                      />
-                    )}
-                    {navbar.isNavbarLeft === false && (
-                      <Header
-                        siteTitle={data.site.siteMetadata?.title || `Title`}
-                        parentCallback={this.callback}
-                      />
-                    )}
+          <ThemeProvider theme={theme}>
+            <ThemeContext.Consumer>
+              {context => (
+                <NavbarContext.Consumer>
+                  {navbar => (
+                    <TransitionHandler location={this.props.location}>
+                      <div
+                        id="page-container"
+                        className={`page-container ${
+                          context.dark ? "dark" : "light"
+                        }`}
+                      >
+                        {navbar.isNavbarLeft === true && (
+                          <Sidebar
+                            siteTitle={data.site.siteMetadata?.title || `Title`}
+                          />
+                        )}
+                        {navbar.isNavbarLeft === false && (
+                          <div className="sticky">
+                            <Header
+                              siteTitle={
+                                data.site.siteMetadata?.title || `Title`
+                              }
+                              parentCallback={this.callback}
+                            />
+                          </div>
+                        )}
 
-                    <div className="main-content">
-                      {/* <div>Layout IsDark: {context.dark === true ? "true" : "false"}</div> */}
-                      {/* <div>navbar.isNavbarLeft: {navbar.isNavbarLeft === true ? "true" : "false"}</div> */}
-                        {this.children}
-                    </div>
+                        <div className="main-content">
+                          {/* <div>Layout IsDark: {context.dark === true ? "true" : "false"}</div> */}
+                          {/* <div>navbar.isNavbarLeft: {navbar.isNavbarLeft === true ? "true" : "false"}</div> */}
+                          {this.children}
+                        </div>
 
-                    <div id="curtain" className="curtain">
-                      <div id="loading-bar" className="loading-bar"></div>
-                    </div>
+                        <div id="curtain" className="curtain">
+                          <div id="loading-bar" className="loading-bar"></div>
+                        </div>
 
-                    <Footer />
-                  </div>
-                  </TransitionHandler>
-                )}
-              </NavbarContext.Consumer>
-            )}
-          </ThemeContext.Consumer>
+                        <Footer />
+                      </div>
+                    </TransitionHandler>
+                  )}
+                </NavbarContext.Consumer>
+              )}
+            </ThemeContext.Consumer>
+          </ThemeProvider>
         )}
       />
     )

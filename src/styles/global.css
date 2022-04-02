@@ -1,6 +1,18 @@
 :root {
-  --dark-background-color: #2e2e2e; /* #121212 #2a2b2d */;
-  --light-background-color: #f2f2f2; /* #f1f3f5 #fefefe */;
+  /* --accent-foreground-color: #63a1ff;  */
+  --accent-foreground-color: #459bf1;
+  /* #63ffda; hsl(59, 95%, 76%); #00fff2; #03d3f8; */ /* hsl(182, 93%, 49%); */
+
+  /* --accent-foreground-color2: #e10298; */
+  --accent-foreground-color2: #63ffda;
+
+  --dark-background-color: #172b3a; /* #0b1a30 #2e2e2e #121212 #2a2b2d */
+  --dark-foreground-color: hsla(0, 0%, 100%, 0.8);
+
+  --light-background-color: #f2f2f2; /* #f1f3f5 #fefefe */
+  --light-foreground-color: hsla(0, 0%, 0%, 0.8);
+
+  --header-background-color: #1b3c69; /* #7953b2 */
 
   --brand-animation-duration: 8s;
   --brand-icon-size: 90px;
@@ -12,6 +24,12 @@
   /* --debug-bg-color2: #aeaeae;
     --debug-bg-color3: #bebebe;
     --debug-bg-color4: #cecece; */
+}
+
+.tl-edges {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
 }
 
 .row1 {
@@ -88,13 +106,12 @@
 }
 
 .dark .form-label {
-    color: #fff;
-  }
-  
+  color: #fff;
+}
 
 .error-text {
-    color: red;
-    font-size: .8em;
+  color: red;
+  font-size: 0.8em;
 }
 
 .form-button {
@@ -123,7 +140,7 @@
 }
 
 .form-button:disabled {
-    color: #ccc;
+  color: #ccc;
 }
 
 .form-button:focus {

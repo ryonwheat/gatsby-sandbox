@@ -9,10 +9,15 @@ const IndexPage = props => (
   <Layout location={props.location}>
     <div>
       <SEO title="Home" />
+      <h5 className="h5-page-title">Hi! My name is</h5>
       <h1>
-        <PageTitle title="Hi people" />
+        <PageTitle title="Ryan Heath" className="main-page-header elastic" />
       </h1>
-      <p>Welcome to my Gatsby site. A place for learning all things React!</p>
+      <p>
+        I'm a freelance full stack software engineer based out of the Denver, CO
+        area with over 20 years of industry experience. My passion is designing
+        and developing web based solutions for clients business needs.
+      </p>
       <div>
         {/* <Image /> */}
         {/* <img

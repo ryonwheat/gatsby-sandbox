@@ -7,20 +7,23 @@ import TransitionLink from "gatsby-plugin-transition-link"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import gsap, { TweenMax } from "gsap"
 import { GiScaleMail } from "react-icons/gi"
+import { navLinks } from "../config"
 
 const fadeOut = ({ props, node, e, exit, entry }) => {
   console.log("handleExit: " + JSON.stringify(props), node, e, exit, entry)
   const duration = props.length
   console.log("duration: " + duration)
 
-  return gsap.timeline().fromTo(node, { opacity: 1 }, { opacity: 0, duration: duration })
-//   TweenMax.to(node, 1, { opacity: 0 })
+  return gsap
+    .timeline()
+    .fromTo(node, { opacity: 1 }, { opacity: 0, duration: duration })
+  //   TweenMax.to(node, 1, { opacity: 0 })
 
-//   gsap.timeline().to(node, {
-//     duration: 2,
-//     opacity: 0,
-//     // repeat: 1,
-//   })
+  //   gsap.timeline().to(node, {
+  //     duration: 2,
+  //     opacity: 0,
+  //     // repeat: 1,
+  //   })
   /*
   gsap
     .timeline()
@@ -60,28 +63,41 @@ const fadeIn = ({ props, node, e, exit, entry }) => {
   console.log("handleEntry: " + JSON.stringify(props), node, e, exit, entry)
   const duration = props.length
 
-  return gsap.timeline().fromTo(node, { opacity: 0 }, { opacity: 1, duration: duration })
-
+  return gsap
+    .timeline()
+    .fromTo(node, { opacity: 0 }, { opacity: 1, duration: duration })
 }
 
 const zoomOut = ({ props, node, e, exit, entry }) => {
-    const duration = props.length
-    return gsap.timeline().fromTo(node, { transform: "scale(1, 1)" }, { transform: "scale(0.2, .002)", duration: duration })
+  const duration = props.length
+  return gsap
+    .timeline()
+    .fromTo(
+      node,
+      { transform: "scale(1, 1)" },
+      { transform: "scale(0.2, .002)", duration: duration }
+    )
 }
 
 const zoomIn = ({ props, node, e, exit, entry }) => {
-    const duration = props.length
-    return gsap.timeline().fromTo(node, { transform: "scale(0.2, .002)" }, { transform: "scale(1, 1)", duration: duration })
+  const duration = props.length
+  return gsap
+    .timeline()
+    .fromTo(
+      node,
+      { transform: "scale(0.2, .002)" },
+      { transform: "scale(1, 1)", duration: duration }
+    )
 }
 
 const ListLink = props => (
   <li className={`${style.navListItem}`}>
     <div className={`${style.navLinkContainer} `}>
-        <Fade to={props.to} class={`${style.navLink}`}>
-            {props.children}
-        </Fade>
+      <Fade to={props.to} class={`${style.navLink}`}>
+        {props.children}
+      </Fade>
 
-        {/* <Zoom to={props.to} class={`${style.navLink}`}>
+      {/* <Zoom to={props.to} class={`${style.navLink}`}>
             {props.children}
         </Zoom> */}
 
@@ -121,11 +137,14 @@ const NavLinks = ({ navStyle }) => {
   return (
     <nav className={navStyle}>
       <ul>
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/portfolio">Portfolio</ListLink>
+        {navLinks.map(({ name, url }, i) => (
+          <ListLink key={i} to={url}>{name}</ListLink>
+        ))}
+        {/* <ListLink to="/">Home</ListLink>
         <ListLink to="/about">About</ListLink>
         <ListLink to="/skills">Skills</ListLink>
-        <ListLink to="/contact">Contact</ListLink>
+        <ListLink to="/portfolio">Portfolio</ListLink>
+        <ListLink to="/contact">Contact</ListLink> */}
       </ul>
     </nav>
   )

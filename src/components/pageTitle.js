@@ -14,18 +14,21 @@ const handleHover = event => {
 
 const PageTitle = props => {
   let arr = Array.from(props.title)
-//   console.log(arr)
-//   arr.forEach((item, index) => {
-//     console.log(item, index)
-//   })
+  //   let className = props.className != null ? props.className : "page-header elastic"
+  //   console.log(arr)
+  //   arr.forEach((item, index) => {
+  //     console.log(item, index)
+  //   })
 
   return (
     <div>
       {arr.map(function (item, index) {
-          let className = "page-header elastic"
-          if (item === ' ') {
-            className += " space";
-          }
+        let className =
+          props.className != null ? props.className : "page-header elastic"
+        //   let className = "page-header elastic"
+        if (item === " ") {
+          className += " space"
+        }
         return (
           <div key={index} className={className} onMouseOver={handleHover}>
             {item}

@@ -1,0 +1,94 @@
+[
+  {
+    "index": "1",
+    "title": "COVID Map",
+    "description": "Displays COVID statistics worldwide on a map...",
+    "src": "../images/covid-tracker.png",
+    "hostUrl": "",
+    "technologies": [
+      {
+        "name": "JS (ES6)",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/"
+      },
+      {
+        "name": "COVID API",
+        "url": "https://covid19api.com/"
+      },
+      {
+        "name": "Google API",
+        "url": "https://developers.google.com/maps/documentation/"
+      }
+    ],
+    "render": true
+  },
+  {
+    "index": "2",
+    "title": "Twitter Map",
+    "description": "Shows real time tweets on a map...",
+    "src": "",
+    "hostUrl": "",
+    "technologies": [
+      {
+        "name": "JS (ES6)",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/"
+      },
+      {
+        "name": "Twitter API",
+        "url": "https://developer.twitter.com/en/docs/twitter-api/"
+      },
+      {
+        "name": "Google API",
+        "url": "https://developers.google.com/maps/documentation/"
+      }
+    ],
+    "render": true
+  },
+  {
+    "index": "3",
+    "title": "Spotify Podcast Manager",
+    "description": "...",
+    "src": "",
+    "hostUrl": "",
+    "technologies": [
+      {
+        "name": "React",
+        "url": "https://reactjs.org/"
+      },
+      {
+        "name": "CSS3",
+        "url": "https://www.w3.org/Style/CSS/specs/"
+      },
+      {
+        "name": "Spotify API",
+        "url": "https://developer.spotify.com/documentation/"
+      }
+    ],
+    "render": true
+  },
+  {
+    "index": "4",
+    "title": "Gray Brick Property Group",
+    "description": "...",
+    "src": "",
+    "hostUrl": "",
+    "technologies": [
+      {
+        "name": "Spring Boot",
+        "url": "https://spring.io/projects/spring-boot/"
+      },
+      {
+        "name": "Thymeleaf",
+        "url": "https://www.thymeleaf.org/"
+      },
+      {
+        "name": "MySql",
+        "url": "https://www.mysql.com/"
+      },
+      {
+        "name": "Salesforce REST API",
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm"
+      }
+    ],
+    "render": true
+  }
+]

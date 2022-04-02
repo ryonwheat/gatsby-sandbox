@@ -1,5 +1,7 @@
 header {
-  background-color: #7953b2;
+    position: sticky;
+    top: 0;
+  background-color: var(--header-background-color);
   margin: 0;
   padding: 0;
   /* height: 60px; */
@@ -40,7 +42,7 @@ header {
   font-size: 3em;
   letter-spacing: 0.1em;
   text-indent: 0.1em;
-  overflow: none;
+  /* overflow: none; */
 }
 
 .brand-icon {
@@ -170,13 +172,13 @@ li.navListItem {
 }
 
 li.navListItem:hover {
-  color: #7953b2;
+  color: var(--header-background-color);
   background-color: var(--light-background-color);
   /* transition: all 0.5s; */
 }
 
 li.navListItem:hover a {
-  color: #7953b2;
+  color: var(--header-background-color);
 }
 
 li.navListItem div.navLinkContainer {
@@ -201,7 +203,7 @@ li.navListItem:hover .navLinkContainer,
 .navLinkContainer::after {
   content: "";
   /* background-color: #aaa; */
-  background-color: #7953b2;
+  background-color: var(--header-background-color);
   margin: -1px;
   position: absolute;
   z-index: -1;
@@ -239,7 +241,7 @@ li a.navLink {
 }
 
 li a.navLink:hover {
-  color: #7953b2;
+  color: var(--header-background-color);
   /* background-color: #eee; */
   text-decoration: none;
   /* transform: translate3d(-10px, -10px, 0); */

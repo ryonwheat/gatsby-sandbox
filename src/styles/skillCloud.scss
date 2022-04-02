@@ -93,7 +93,7 @@ $skills-list: HTML5, CSS3, JS;
   $y: $sphere-radius * math.sin($phi) * math.sin($theta);
   $z: $sphere-radius * math.cos($phi);
 
-  @debug "x: #{$x}";
+//   @debug "x: #{$x}";
   //   @debug $y;
   //   @debug $z;
 

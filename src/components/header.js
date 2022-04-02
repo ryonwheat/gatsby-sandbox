@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
+import styled from "styled-components"
 import style from "./header.module.css"
 
 import NavLinks from "./navLinks"
@@ -34,41 +35,40 @@ class Header extends Component {
   }
 
   render() {
-    return (
-      <header>
-        {/* <div className={``}> */}
-        <div className={`${style.headerInnerWrap} row1`}>
-          <div className={`${style.brandContainer} col3`}>
-            <div
-              id="brand-icon"
-              className={`${style.brandIcon}`}
-              //   onMouseOver={this.handleHover}
-            >
-              <div className={`${style.brandContent}`}>RH</div>
-            </div>
-            {/* <Link to="/" style={{ textShadow: "none" }}>
-              {this.props.siteTitle}
-            </Link> */}
-          </div>
-          {/* <div className={``}> */}
-          <div className={`${style.navWrap} col6`}>
-            {/* <nav>
-              <ul>
-                <li className={`${style.navListItem}`}><a className={`${style.navLink}`} href="#">Home</a></li>
-                <li className={`${style.navListItem}`}><a className={`${style.navLink}`} href="#">About</a></li>
-                <li className={`${style.navListItem}`}><a className={`${style.navLink}`} href="#">Contact</a></li>
-              </ul>
-            </nav> */}
+    const StyledHeader = styled.header`
+      //   position: sticky;
+      //   top: 0;
+      //   background-color: var(--header-background-color);
+      //   margin: 0;
+      //   padding: 0;
 
-            <NavLinks />
+      .sticky1 {
+        position: sticky;
+        top: 0;
+        height: 50px;
+        background-color: #113399;
+      }
+    `
+
+    return (
+      //     <div className="sticky-">
+      <StyledHeader>
+          <div className={`${style.headerInnerWrap} row1`}>
+            <div className={`${style.brandContainer} col3`}>
+              <div id="brand-icon" className={`${style.brandIcon}`}>
+                <div className={`${style.brandContent}`}>RH</div>
+              </div>
+            </div>
+            <div className={`${style.navWrap} col6`}>
+              <NavLinks />
+            </div>
+            <div className={`${style.toggleIcon} col3`}>
+              <NavbarToggle />
+              <ThemeToggle />
+            </div>
           </div>
-          <div className={`${style.toggleIcon} col3`}>
-            <NavbarToggle />
-            <ThemeToggle />
-            {/* <button onClick={this.handleClick}>Bubble Up</button> */}
-          </div>
-        </div>
-      </header>
+      </StyledHeader>
+      //   </div>
     )
   }
 }
