@@ -59,7 +59,7 @@ const StyledProject = styled.div`
 
   .project-description {
     position: relative;
-    background-color: #1b3c69;
+    background-color: #112040; /* #1b3c69; */
     border-radius: 6px;
     box-shadow: 0 10px 30px -15px #020c1bb3;
     padding: 25px;
@@ -70,6 +70,11 @@ const StyledProject = styled.div`
 
   .project-links {
     color: inherit;
+  }
+
+  .project-links:hover {
+    color: #63ffda;
+    text-decoration: none;
   }
 
   .project-technologies {
@@ -94,11 +99,11 @@ const ProjectsPage = props => {
             src {
               childImageSharp {
                 gatsbyImageData(
-                    aspectRatio: 1
-                    layout: CONSTRAINED
-                    placeholder: BLURRED
-                    width: 470
-                    height: 300
+                  aspectRatio: 1
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  width: 470
+                  height: 300
                 )
               }
             }
@@ -151,7 +156,7 @@ const ProjectsPage = props => {
 
         <div className="container-">
           {projects.map(({ node }, i) => {
-            const { title, description, src, technologies } = node
+            const { title, description, hostUrl, src, technologies } = node
             const image = getImage(src)
 
             //   projects.map(({ node }, i) => {
@@ -163,7 +168,17 @@ const ProjectsPage = props => {
                 <div className="project-inner">
                   <div className="project-content-wrap">
                     <div className="featured-project">Featured Project</div>
-                    <div className="project-name">{title}</div>
+                    <div className="project-name">
+                      {hostUrl && <a
+                        className="project-links"
+                        href={hostUrl}
+                        target="_blank"
+                      >
+                        {title}
+                      </a>
+                      }
+                      {!hostUrl && title}
+                    </div>
                     <div className="project-description">{description}</div>
                     <div>
                       {technologies && (

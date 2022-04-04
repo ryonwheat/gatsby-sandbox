@@ -3,6 +3,7 @@ import ContactForm from "../components/contactForm"
 import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
+import "./contact.css"
 
 // TODO:
 // 1. Create a TransitionHandler encapsulating the transition logic
@@ -76,10 +77,11 @@ class ContactPage extends Component {
           > */}
           <Layout location={this.state.location}>
             <SEO title="Home" />
-            <div>
+            <div class="page-wrap">
               {/* <h1>Contact</h1> */}
               <h2 className="center">
-                Thanks for reaching out! How can I help you out today?
+                Think I can help?<br/>
+                Let's talk.
               </h2>
               <div className="form-wrapper">
                 <ContactForm />

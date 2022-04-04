@@ -54,15 +54,15 @@ class Header extends Component {
       //     <div className="sticky-">
       <StyledHeader>
           <div className={`${style.headerInnerWrap} row1`}>
-            <div className={`${style.brandContainer} col3`}>
+            <div className={`${style.brandContainer} col2`}>
               <div id="brand-icon" className={`${style.brandIcon}`}>
                 <div className={`${style.brandContent}`}>RH</div>
               </div>
             </div>
-            <div className={`${style.navWrap} col6`}>
+            <div className={`${style.navWrap} col8`}>
               <NavLinks />
             </div>
-            <div className={`${style.toggleIcon} col3`}>
+            <div className={`${style.toggleIcon} col2`}>
               <NavbarToggle />
               <ThemeToggle />
             </div>

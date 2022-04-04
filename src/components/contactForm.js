@@ -4,12 +4,19 @@ class ContactForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   message: "",
-      fieldValues: { firstName: "", lastName: "", email: "", message: "" },
-      fieldErrors: { firstName: "", lastName: "", email: "" },
+      //   firstName: "",
+      //   lastName: "",
+      //   email: "",
+      //   message: "",
+      fieldValues: {
+        firstName: "",
+        lastName: "",
+        companyName: "",
+        email: "",
+        howDidYouFindMe: "",
+        message: "",
+      },
+      fieldErrors: { firstName: "", companyName: "", email: "" },
       validForm: false,
       response: null,
     }
@@ -30,7 +37,7 @@ class ContactForm extends Component {
   }
 
   handleSubmit = async event => {
-    console.log("submit - this.state.firstName: " + this.state)
+    console.log("submit - this.state: " + this.state)
     event.preventDefault()
 
     if (this.validateForm()) {
@@ -98,15 +105,16 @@ class ContactForm extends Component {
           isValid = false
         }
         break
-      case "lastName":
-        fieldErrors.lastName =
-          value.trim().length === 0 ? "Please enter your last name." : ""
-        if (fieldErrors.lastName.length > 0) {
+      case "companyName":
+        fieldErrors.companyName =
+          value.trim().length === 0 ? "Please enter your company." : ""
+        if (fieldErrors.companyName.length > 0) {
           isValid = false
         }
         break
       case "email":
-        fieldErrors.email = value.trim().length === 0 ? "Please enter your email." : ""
+        fieldErrors.email =
+          value.trim().length === 0 ? "Please enter your email." : ""
         if (fieldErrors.email.length > 0) {
           isValid = false
         }
@@ -127,11 +135,11 @@ class ContactForm extends Component {
     let isValid = true
 
     Object.entries(this.state.fieldValues).forEach(([key, value]) => {
-        // console.log(`${key} ${value}`)
-        console.log(key, value)
-        if (!this.validateField(key, value)) {
-            isValid = false
-        }
+      // console.log(`${key} ${value}`)
+      console.log(key, value)
+      if (!this.validateField(key, value)) {
+        isValid = false
+      }
     })
 
     // let errors = this.state.fieldErrors
@@ -154,68 +162,82 @@ class ContactForm extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="col form-group">
-                <label className="form-label" htmlFor="firstName">
-                  First Name
-                </label>
                 <input
-                  className="form-control"
+                  className="form-input form-control"
                   type="text"
                   id="firstName"
                   name="firstName"
                   value={this.state.fieldValues.firstName}
                   onChange={this.handleChange}
                 />
+                <label className="form-label" htmlFor="firstName">
+                  First Name
+                </label>
                 <div className="error-text">
                   {this.state.fieldErrors.firstName}
                 </div>
               </div>
               <div className="col form-group">
-                <label className="form-label" htmlFor="lastName">
-                  Last Name
-                </label>
                 <input
-                  className="form-control"
+                  className="form-input form-control"
                   type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={this.state.fieldValues.lastName}
+                  id="companyName"
+                  name="companyName"
+                  value={this.state.fieldValues.companyName}
                   onChange={this.handleChange}
                 />
-                <div className="error-text">
-                  {this.state.fieldErrors.lastName}
-                </div>
+                <label className="form-label" htmlFor="companyName">
+                  Company Name
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div className="col form-group">
+                <input
+                  className="form-input form-control"
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={this.state.fieldValues.email}
+                  onChange={this.handleChange}
+                />
+                <label className="form-label" htmlFor="email">
+                  Email
+                </label>
+                <div className="error-text">{this.state.fieldErrors.email}</div>
+              </div>
+              <div className="col form-group">
+                <input
+                  className="form-input form-control"
+                  type="text"
+                  id="howDidYouFindMe"
+                  name="howDidYouFindMe"
+                  value={this.state.fieldValues.howDidYouFindMe}
+                  onChange={this.handleChange}
+                />
+                <label className="form-label" htmlFor="howDidYouFindMe">
+                  How did you find me?
+                </label>
               </div>
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="form-control"
-                type="text"
-                id="email"
-                name="email"
-                value={this.state.fieldValues.email}
-                onChange={this.handleChange}
-              />
-                <div className="error-text">
-                  {this.state.fieldErrors.email}
-                </div>
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="message">
-                Message
-              </label>
               <textarea
-                className="form-control"
+                className="form-input form-control"
                 id="message"
                 name="message"
                 value={this.state.fieldValues.message}
                 onChange={this.handleChange}
               />
+              <label className="form-label" htmlFor="message">
+                Message
+              </label>
             </div>
             <div className="center">
-              <button className="form-button" type="submit" disabled={!this.state.validForm}>
+              <button
+                className="form-button"
+                type="submit"
+                disabled={!this.state.validForm}
+              >
                 Contact
               </button>
             </div>

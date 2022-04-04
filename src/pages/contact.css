@@ -1,0 +1,11 @@
+.page-wrap {
+    padding-top: 200px;
+}
+
+.form-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #13aff0 !important;
+    border-radius: 0 !important;
+    color: #ffffff !important;
+}

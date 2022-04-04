@@ -4,7 +4,7 @@
     "title": "COVID Map",
     "description": "Displays COVID statistics worldwide on a map...",
     "src": "../images/covid-tracker.png",
-    "hostUrl": "",
+    "hostUrl": "https://covid-19-google-map.netlify.app/",
     "technologies": [
       {
         "name": "JS (ES6)",
@@ -70,7 +70,7 @@
     "title": "Gray Brick Property Group",
     "description": "...",
     "src": "",
-    "hostUrl": "",
+    "hostUrl": "https://graybrickpropertygroup.com",
     "technologies": [
       {
         "name": "Spring Boot",
