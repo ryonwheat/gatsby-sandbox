@@ -1,9 +1,9 @@
 module.exports = {
     navLinks: [
-        {
-            name: 'Home',
-            url: '/'
-        },
+        // {
+        //     name: 'Home',
+        //     url: '/'
+        // },
         {
             name: 'About',
             url: '/about'
@@ -16,10 +16,10 @@ module.exports = {
             name: 'Skills',
             url: '/skills'
         },
-        {
-            name: 'Portfolio',
-            url: '/portfolio'
-        },
+        // {
+        //     name: 'Portfolio',
+        //     url: '/portfolio'
+        // },
         {
             name: 'Contact',
             url: '/contact'

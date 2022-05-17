@@ -24,7 +24,7 @@ class Layout extends Component {
   constructor(props) {
     super(props)
     this.children = props.children
-    console.log("Layout.location: " + props.location)
+    console.log("Layout.location: " + JSON.stringify(props.location))
     this.state = {
       animate: true,
     }
@@ -52,7 +52,7 @@ class Layout extends Component {
 
   // child to parent communication
   callback = data => {
-    console.log("Layout.callback: " + data)
+    console.log("layout.callback: " + data)
     this.props.parentCallback(data)
   }
 
@@ -98,7 +98,7 @@ class Layout extends Component {
                         )}
 
                         <div className="main-content">
-                          {/* <div>Layout IsDark: {context.dark === true ? "true" : "false"}</div> */}
+                          <div>Layout IsDark: {context.dark === true ? "true" : "false"}</div>
                           {/* <div>navbar.isNavbarLeft: {navbar.isNavbarLeft === true ? "true" : "false"}</div> */}
                           {this.children}
                         </div>

@@ -14,6 +14,7 @@ const ThemeContext = createContext(defaultContext)
 class ThemeProvider extends Component {
   constructor(props) {
     super(props)
+    console.log("ThemeProvider constructor ", JSON.stringify(props));
     this.state = {
       dark: false,
     }
@@ -21,7 +22,7 @@ class ThemeProvider extends Component {
 
   toggleDark = () => {
     let dark = !this.state.dark
-    console.log("toggleDark.isDark: " + dark)
+    console.log("ThemeProvider.toggleDark.isDark: " + dark)
     localStorage.setItem("dark", JSON.stringify(dark))
     this.setState({ dark })
 
@@ -70,7 +71,7 @@ class ThemeProvider extends Component {
 
   componentDidMount() {
     const isDark = JSON.parse(localStorage.getItem("dark"))
-    console.log("isDark: " + isDark)
+    console.log("ThemeProvider.componentDidMount.isDark: " + isDark)
     if (isDark) {
       this.setState({ dark: isDark })
     } else {

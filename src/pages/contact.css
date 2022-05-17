@@ -2,10 +2,14 @@
     padding-top: 200px;
 }
 
-.form-input {
+.form-input, textarea {
     background: transparent !important;
     border: none !important;
     border-bottom: 1px solid #13aff0 !important;
     border-radius: 0 !important;
     color: #ffffff !important;
+}
+
+textarea {
+    border-top: 1px solid #13aff0 !important;
 }

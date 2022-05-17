@@ -14,7 +14,7 @@ class ContactForm extends Component {
         companyName: "",
         email: "",
         howDidYouFindMe: "",
-        message: "",
+        message: "Message",
       },
       fieldErrors: { firstName: "", companyName: "", email: "" },
       validForm: false,
@@ -222,12 +222,13 @@ class ContactForm extends Component {
             </div>
             <div className="form-group">
               <textarea
-                className="form-input form-control"
+                className="form-control"
                 id="message"
                 name="message"
+                // defaultValue="Message"
                 value={this.state.fieldValues.message}
                 onChange={this.handleChange}
-              />
+                rows="5" />
               <label className="form-label" htmlFor="message">
                 Message
               </label>

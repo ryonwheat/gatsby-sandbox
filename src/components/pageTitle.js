@@ -3,7 +3,7 @@ import React from "react"
 const handleHover = event => {
   let el = event.target
   if (el) {
-    console.log("hover: " + el.classList)
+    console.log("pageTitle.hover: " + el.classList)
     el.classList.add("elastic-animation")
 
     setTimeout(() => {
@@ -21,7 +21,7 @@ const PageTitle = props => {
   //   })
 
   return (
-    <div>
+    <div className="page-title">
       {arr.map(function (item, index) {
         let className =
           props.className != null ? props.className : "page-header elastic"

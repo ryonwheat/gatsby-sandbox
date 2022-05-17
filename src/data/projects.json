@@ -1,9 +1,31 @@
 [
   {
     "index": "1",
+    "title": "Pelolytics",
+    "description": "Peloton analytical data",
+    "src": "../images/blank.png",
+    "hostUrl": "",
+    "technologies": [
+      {
+        "name": "React",
+        "url": "https://reactjs.org/"
+      },
+      {
+        "name": "Express",
+        "url": "https://expressjs.com/"
+      },
+      {
+        "name": "Unofficial Peloton API",
+        "url": "https://app.swaggerhub.com/apis/DovOps/peloton-unofficial-api/0.2.3"
+      }
+    ],
+    "render": true
+  },
+  {
+    "index": "2",
     "title": "COVID Map",
     "description": "Displays COVID statistics worldwide on a map...",
-    "src": "../images/covid-tracker.png",
+    "src": "../images/covid-tracker-new.png",
     "hostUrl": "https://covid-19-google-map.netlify.app/",
     "technologies": [
       {
@@ -22,7 +44,7 @@
     "render": true
   },
   {
-    "index": "2",
+    "index": "3",
     "title": "Twitter Map",
     "description": "Shows real time tweets on a map...",
     "src": "",
@@ -41,10 +63,10 @@
         "url": "https://developers.google.com/maps/documentation/"
       }
     ],
-    "render": true
+    "render": false
   },
   {
-    "index": "3",
+    "index": "4",
     "title": "Spotify Podcast Manager",
     "description": "...",
     "src": "",
@@ -63,13 +85,13 @@
         "url": "https://developer.spotify.com/documentation/"
       }
     ],
-    "render": true
+    "render": false
   },
   {
-    "index": "4",
+    "index": "5",
     "title": "Gray Brick Property Group",
-    "description": "...",
-    "src": "",
+    "description": "Real Estate Investment / Property Management Company",
+    "src": "../images/gbpg.png",
     "hostUrl": "https://graybrickpropertygroup.com",
     "technologies": [
       {

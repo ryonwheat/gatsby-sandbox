@@ -119,7 +119,8 @@ const ProjectsPage = props => {
       }
     }
   `)
-  const projects = data.allProjectsJson.edges.filter(({ node }) => node)
+  const projects = data.allProjectsJson.edges.filter(({ node }) => node.render == true)
+//   const projects = data.allProjectsJson.edges.filter(({ node }) => node)
 
   //   const data = useStaticQuery(graphql`
   //     query {
@@ -157,7 +158,9 @@ const ProjectsPage = props => {
         <div className="container-">
           {projects.map(({ node }, i) => {
             const { title, description, hostUrl, src, technologies } = node
+            console.log("src: " + src);
             const image = getImage(src)
+            console.log("image: " + image);
 
             //   projects.map(({ node }, i) => {
             //     const { frontmatter } = node

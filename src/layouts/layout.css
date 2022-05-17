@@ -616,7 +616,7 @@ pre tt:after {
   min-height: 100vh;
   margin: 0 auto 50px auto;
   max-width: 960px;
-  padding: 60px 1.0875rem 1.45rem 0;
+  padding: 100px 1.0875rem 1.45rem 0;
 }
 
 .landing-image {
@@ -932,6 +932,10 @@ pre tt:after {
   color: var(--dark-foreground-color);
 }
 
+.page-title {
+  margin: 20px 0 40px 0;
+}
+
 .page-description {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -976,6 +980,17 @@ pre tt:after {
     /* transform: scale(1); */
   }
 }
+
+*:focus {
+    outline:#FFF7A7 solid 2px !important;
+    /* outline:#F7DE3A solid 2px !important; */
+}
+
+.form-control:focus {
+    /* outline: lightgreen solid 2px !important; */
+    box-shadow: none !important;
+}
+
 
 /**
  * Used with CSSTransition

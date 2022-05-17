@@ -16,7 +16,7 @@ class Header extends Component {
   handleHover = event => {
     let el = document.getElementById("brand-icon")
     if (el) {
-      console.log("hover: " + el.classList)
+      console.log("header.handleHover: " + el.classList)
       el.classList.add(`${style.brandIconAnimation}`)
 
       setTimeout(() => {
@@ -26,11 +26,12 @@ class Header extends Component {
   }
 
   handleClick = event => {
-    console.log("Header.handleClick")
+    console.log("header.handleClick")
     this.props.parentCallback(event)
   }
 
   callback = data => {
+    console.log("header.callback")
     this.props.parentCallback(data)
   }
 
@@ -63,7 +64,7 @@ class Header extends Component {
               <NavLinks />
             </div>
             <div className={`${style.toggleIcon} col2`}>
-              <NavbarToggle />
+              {/* <NavbarToggle /> */}
               <ThemeToggle />
             </div>
           </div>
